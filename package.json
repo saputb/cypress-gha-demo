@@ -1,0 +1,19 @@
+{
+  "name": "e2e-cypress",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "cypress": "^12.3.0",
+    "prettier": "^2.8.3"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
+}

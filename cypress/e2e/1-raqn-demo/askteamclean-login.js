@@ -11,7 +11,7 @@ describe('Open Login page and close cookies', () => {
   
 });
 
-    it ('Login Test',  () => {
+    it ('Login into the application',  () => {
         cy.url()
         .should('contain', '/profile/login.html'); // Assert for correct URL link
 

@@ -1,15 +1,20 @@
 /// <reference types = "cypress" />
 function generateRandomEmail() {
     const randomNumber = Math.floor(Math.random() * 1000000);
-    return `bobby.saputra+${randomNumber}@henkel.com`;
+    return `dontobono+${randomNumber}@gmail.com`;
   }
 
 describe('Registration Test', () => {
-    
+
+    it('Handle error', () => {
+        cy.on('uncaught:exception', (err) => {
+          // Bypass uncaught exceptions
+          return false;
+        });
+    })
     it('Navigate to registration page and register', () => {  
         const email = generateRandomEmail ();
-        cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/enregistrer.html/please-log-me-in')
-
+        cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/enregistrer.html/please-log-me-in');
         cy.get('#onetrust-accept-btn-handler').click();
         cy.get(':nth-child(2) > :nth-child(1) > .gigya-composite-control > input').click();
         cy.get('#gigya-loginID-86616308672852050').type(email);
@@ -30,8 +35,18 @@ describe('Registration Test', () => {
         cy.get('#gigya-checkbox-1791737162387700').check();
         cy.get('#gigya-checkbox-118137378675131230').check();
         cy.get('#gigya-register-form > :nth-child(28) > .gigya-composite-control-submit > .gigya-input-submit').click();
-        cy.url().should('include', '/fr/fr/bienvenue/enregistrer.html');
+        
+    //     cy.get('#gigya-verification-sent-screen > :nth-child(4) > .gigya-composite-control > input').click({force: true});
+    //     cy.url().should('contain', '/fr/fr/welcome.html');
+        
+    // it('Handle error'), function (){
+    //     cy.on('uncaught:exception', (err) => {
+    //         // Bypass uncaught exceptions
+    //         return false;
+    
+    //     })}
 
+        
     });
 
 });

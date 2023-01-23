@@ -3,7 +3,7 @@ function generateRandomEmail() {
     const randomNumber = Math.floor(Math.random() * 1000000);
     return `dontobono+${randomNumber}@gmail.com`;
   }
-
+  
 describe('Registration Test', () => {
 
     it('Handle error', () => {

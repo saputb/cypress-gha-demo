@@ -12,8 +12,8 @@ module.exports = defineConfig ({
     baseUrl: 'https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue.html/please-log-me-in',
        // defaultCommandTimeout: 30000,
     
-    viewportHeight: 660,
-    viewportWidth: 1000,
+    viewportHeight: 900,
+    viewportWidth: 1440,
     waitForAnimations: true,
     watchForFileChanges: true,
     pageLoadTimeout: 30000,
@@ -21,7 +21,8 @@ module.exports = defineConfig ({
     experimentalStudio: true,
     experimentalWebKitSupport: true,
     // experimentalNetworkStubbing: true,
-    // chromeWebSecurity:false,
+    chromeWebSecurity:false,
+
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here

@@ -17,7 +17,8 @@ describe('Registration Test', () => {
         const email = generateRandomEmail ();
         cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/enregistrer.html/please-log-me-in');
         cy.get('#onetrust-accept-btn-handler').click();
-        cy.get(':nth-child(2) > :nth-child(1) > .gigya-composite-control > input').click();
+        cy.wait (5000);
+        cy.xpath('.//input[@value="OUI"]').click();
         cy.get('#gigya-loginID-86616308672852050').type(email);
         cy.get('#gigya-password-150360966288504350').type('Test123!!!');
         cy.get('#gigya-password-54377226270436850').type('Test123!!!');

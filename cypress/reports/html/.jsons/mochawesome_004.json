@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-01-25T13:02:08.607Z",
+    "end": "2023-01-25T13:02:33.307Z",
+    "duration": 24700,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a7ee244-0104-4f7e-92d4-ff8881475ebc",
+      "title": "",
+      "fullFile": "cypress/e2e/1-raqn-demo/loginSkpRef.js",
+      "file": "cypress/e2e/1-raqn-demo/loginSkpRef.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a8c775f5-5bf5-4fbe-b2cf-bb83fcfa0b95",
+          "title": "E2E Login test SKP",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Logins and logout into the application",
+              "fullTitle": "E2E Login test SKP Logins and logout into the application",
+              "timedOut": null,
+              "duration": 24681,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/login.html/please-log-me-in'); // Open specific URL\nCypress.on('uncaught:exception', (err, runnable) => {\n  return false;\n});\ncy.get('#onetrust-accept-btn-handler').click(); // Click the button with ID \"onetrust-accept-btn-handler\" to dismiss the pop-up\ncy.wait(4000);\ncy.url().should('contain', '/fr/fr/bienvenue/login.html'); // Assert for correct URL link\ncy.get('#gigya-textbox-78686915856172460').type('liston.yossef@moontrack.net'); // Type Email on textbox\ncy.get('#gigya-password-15255886841441036').type('Test123!!!'); // Type Password on textbox\ncy.get('#gigya-login-form > :nth-child(6) > .gigya-composite-control-submit > .gigya-input-submit').click(); // Click on login submit button\ncy.wait(12000);\ncy.xpath('.//div[@id=\"title-6fb8d38fde\"]'); // Verify ASK education text\ncy.xpath('.//a[@id=\"calltoaction-fedd7b9e95\"]'); // Verify OSB CTA Button\ncy.get('.login__circle > span').invoke('show'); // Show hidden element with invoke\ncy.contains('SE DÉCONNECTER').click({\n  force: true\n}); //click hidden element",
+              "err": {},
+              "uuid": "61b56236-2888-460f-b0d1-60a69ab16b0d",
+              "parentUUID": "a8c775f5-5bf5-4fbe-b2cf-bb83fcfa0b95",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "61b56236-2888-460f-b0d1-60a69ab16b0d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24681,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

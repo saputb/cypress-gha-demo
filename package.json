@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "npx cypress run"
+    "cy:report": "cypress run"
   },
   "author": "",
   "license": "ISC",

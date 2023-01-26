@@ -63,6 +63,8 @@ describe('Open Login page and close cookies', () => {
         cy.xpath('.//button[@aria-label="Remove Trainee email input"]//span[@class="icon__svgWrap icon__svgWrap--initial icon__svgWrap--initial-only"]//*[name()="svg"]')
         .click();
 
+        cy.wait (5000)
+        
         cy.get('#btn__calltoaction-86f9e202fc').click();
 
         cy.get('#calltoaction-1e1b89e387').click(); // Click on cart button

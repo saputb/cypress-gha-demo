@@ -1,10 +1,15 @@
 const { defineConfig } = require('cypress')
+// Populate process.env with values from .env file
+require('dotenv').config()
 
 module.exports = defineConfig ({
   reporter: 'cypress-mochawesome-reporter',
 
   env: {
     MAILOSAUR_API_KEY: "BkYrEF1CiqbmDLH6",
+    auth0_username: process.env.AUTH0_USERNAME,
+    auth0_password: process.env.AUTH0_PASSWORD,
+    auth0_domain: process.env.REACT_APP_AUTH0_DOMAIN,
   },
 
   e2e: {

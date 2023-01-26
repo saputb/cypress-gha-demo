@@ -26,9 +26,9 @@ describe('Open Login page and close cookies', () => {
 
         cy.wait(14000)
 
-        cy.url()
-        .should('contain', '/fr/fr.html'); // Assert for correct URL link
-    
+        cy.xpath('.//h1[normalize-space()="ASK EDUCATION"]')
+        .should('be.visible');
+       
         cy.xpath('.//a[@id="calltoaction-fedd7b9e95"]')
         .click(); // Click on CTA button
 
@@ -64,7 +64,7 @@ describe('Open Login page and close cookies', () => {
         .click();
 
         cy.wait (5000)
-        
+
         cy.get('#btn__calltoaction-86f9e202fc').click();
 
         cy.get('#calltoaction-1e1b89e387').click(); // Click on cart button

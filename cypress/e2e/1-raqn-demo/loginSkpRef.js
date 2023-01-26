@@ -1,21 +1,15 @@
 /// <reference types = "cypress" />
 
-describe('E2E Login test SKP', () =>{
+describe('E2E Login test SKP', () => {
+  beforeEach(() => {
+  cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/login.html/please-log-me-in'); // Open specific URL
+  Cypress.on('uncaught:exception', (err, runnable) => { return false; })
+  cy.get('#onetrust-accept-btn-handler')
+  .click();  // Click the button with ID "onetrust-accept-btn-handler" to dismiss the pop-up
+  })
 
-  // it('Accepts cookies', () => {
-  //   cy.on('uncaught:exception', (err) => {
-  //     // Bypass uncaught exceptions
-  //     return false;
-  //   });
-
-it ('Logins and logout into the application', () => {
-
-    cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/login.html/please-log-me-in'); // Open specific URL
-    Cypress.on('uncaught:exception', (err, runnable) => { return false; })
-
-    cy.get('#onetrust-accept-btn-handler')
-    .click();  // Click the button with ID "onetrust-accept-btn-handler" to dismiss the pop-up
-   
+  it ('Logins and logout into the application', () => {
+  
     cy.wait(4000)
 
     cy.url()
@@ -31,17 +25,16 @@ it ('Logins and logout into the application', () => {
     .click(); // Click on login submit button
      
     cy.wait (12000);
-
+ 
     cy.xpath('.//div[@id="title-6fb8d38fde"]'); // Verify ASK education text
 
     cy.xpath('.//a[@id="calltoaction-fedd7b9e95"]'); // Verify OSB CTA Button
 
-    cy.get('.login__circle > span')
+    cy.get('.login__circle')
     .invoke('show'); // Show hidden element with invoke
 
-    cy.contains('SE DÉCONNECTER').click({force:true});     //click hidden element
+    cy.contains('SE DÉCONNECTER').click({force:true});     // Click hidden element
 
     })
-
   })
 

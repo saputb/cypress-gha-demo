@@ -32,6 +32,8 @@ describe('Open Login page and close cookies', () => {
         cy.xpath('.//a[@id="calltoaction-fedd7b9e95"]')
         .click(); // Click on CTA button
 
+        cy.wait(6000)
+
         cy.url()
         .should('contain', '/fr/fr/catalogue.html'); // Assert for correct URL link
      
@@ -44,7 +46,7 @@ describe('Open Login page and close cookies', () => {
         cy.xpath('./html[1]/body[1]/div[2]/div[1]/div[2]/main[1]/div[1]/heliux-section[2]/div[3]/heliux-section[1]/div[3]/heliux-teaserlist-v2[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/heliux-section[1]/div[3]/section[2]/div[1]/heliux-grid[1]/div[2]/heliux-calltoaction[1]/div[2]/div[1]/a[1]')
         cy.contains('EXPLORER').click();
 
-        cy.wait(5000)
+        cy.wait(10000)
 
         cy.url()
         .should('contain', '/course/1454700/BlondMe%20Signature'); // Assert for correct URL link
@@ -58,14 +60,16 @@ describe('Open Login page and close cookies', () => {
 
         cy.get('#btn__calltoaction-6262144cf6').click();
 
-        cy.get('#isAssignToMe').check();
+        cy.get('#isAssignToMe').check(); // Check mark on Assign to me
        
         cy.xpath('.//button[@aria-label="Remove Trainee email input"]//span[@class="icon__svgWrap icon__svgWrap--initial icon__svgWrap--initial-only"]//*[name()="svg"]')
-        .click();
+        .click(); 
 
         cy.wait (5000)
 
         cy.get('#btn__calltoaction-86f9e202fc').click();
+
+        cy.wait (5000)
 
         cy.get('#calltoaction-1e1b89e387').click(); // Click on cart button
 

@@ -9,9 +9,9 @@ describe('Open Login page and close cookies', () => {
 
     it ('Login into the application',  () => {
 
-        cy.visit(ASK_PAGE_URL);
+        cy.visit(ASK_PAGE_URL); // Visit URL
         
-        cy.get('#onetrust-accept-btn-handler').click();
+        cy.get('#onetrust-accept-btn-handler').click(); // Click on allow cookies
 
         cy.wait(7000);
 
@@ -37,7 +37,7 @@ describe('Open Login page and close cookies', () => {
         cy.contains('Logout').click({force:true});     // Click hidden element
         
         cy.url()
-        .should('include', 'login.html')       // Verify URL after logged out
+        .should('include', 'login.html')    // Verify URL after logged out
         
     })
     

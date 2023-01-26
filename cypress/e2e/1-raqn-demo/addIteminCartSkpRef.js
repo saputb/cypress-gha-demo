@@ -29,8 +29,43 @@ describe('Open Login page and close cookies', () => {
         cy.url()
         .should('contain', '/fr/fr.html'); // Assert for correct URL link
     
-        cy.get('#btn__calltoaction-39502e7133').invoke('show'); // Show hidden element with invoke
-        cy.contains('SE DÉCONNECTER').click({force:true});     // Click hidden element
+        cy.xpath('.//a[@id="calltoaction-fedd7b9e95"]')
+        .click(); // Click on CTA button
+
+       cy.url()
+        .should('contain', '/fr/fr/catalogue.html'); // Assert for correct URL link
+     
+        cy.xpath('.//div[@id="title-fa937ee377"]//h4[contains(@class,"heading5 apply-margins apply-font-style title__heading insideTemplate")][normalize-space()="BlondMe Signature"]')
+        .should('be.visible');
+      
+        cy.xpath('./html[1]/body[1]/div[2]/div[1]/div[2]/main[1]/div[1]/heliux-section[2]/div[3]/heliux-section[1]/div[3]/heliux-teaserlist-v2[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/heliux-section[1]/div[3]/section[2]/div[1]/heliux-grid[1]/div[2]/heliux-section[1]/div[3]/heliux-text[1]/div[1]/p[1]')
+        .should('be.visible');
+
+       cy.xpath('./html[1]/body[1]/div[2]/div[1]/div[2]/main[1]/div[1]/heliux-section[2]/div[3]/heliux-section[1]/div[3]/heliux-teaserlist-v2[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/heliux-section[1]/div[3]/section[2]/div[1]/heliux-grid[1]/div[2]/heliux-calltoaction[1]/div[2]/div[1]/a[1]')
+       cy.contains('EXPLORER').click();
+
+       cy.wait (5000)
+
+       cy.url()
+       .should('contain', '/course/1454700/BlondMe%20Signature'); // Assert for correct URL link
+    
+      
+       cy.get('.image__base > .image__imgPreview > .image__img').should('be.visible');
+
+       cy.get('.heading1').should('contain','BlondMe Signature');
+
+       cy.get('.enrollmentBlock__listPrice').contains ('125,00 €');
+
+       cy.get('#btn__calltoaction-6262144cf6').click();
+
+       cy.get('.assignseats__assignToMeLabel').check();
+       
+      
+       //h1[@class='heading1 apply-margins apply-font-style title__heading insideTemplate']
+      
+      
+       // cy.get('#btn__calltoaction-39502e7133').invoke('show'); // Show hidden element with invoke
+        // cy.contains('SE DÉCONNECTER').click({force:true});     // Click hidden element
 
         
     })

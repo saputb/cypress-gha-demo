@@ -7,13 +7,13 @@ function generateRandomEmail() {
   
 describe('Registration Test', () => {
 
-    it('Handle error', () => {
+    it('Handles error', () => {
         cy.on('uncaught:exception', (err) => {
           // Bypass uncaught exceptions
           return false;
         });
     })
-    it('Navigate to registration page and register', () => {  
+    it('Navigates to registration page and register', () => {  
         const email = generateRandomEmail ();
         cy.visit('https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue/enregistrer.html/please-log-me-in');
         cy.get('#onetrust-accept-btn-handler').click();

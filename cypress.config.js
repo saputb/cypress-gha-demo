@@ -12,8 +12,8 @@ module.exports = defineConfig ({
     baseUrl: 'https://eacademy-schwarzkopf-professional-com.ref.web.raqn.io/fr/fr/bienvenue.html/please-log-me-in',
        // defaultCommandTimeout: 30000,
     
-    viewportHeight: 900,
-    viewportWidth: 1440,
+    viewportHeight: 720,
+    viewportWidth: 1280,
     waitForAnimations: true,
     watchForFileChanges: true,
     pageLoadTimeout: 30000,

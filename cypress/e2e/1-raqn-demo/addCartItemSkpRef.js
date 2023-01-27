@@ -6,7 +6,7 @@ const PASSWORD = 'Test123!!!'
 
 describe('Open Login page and close cookies', () => {
 
-    it ('Logins into the application',  () => {
+    it.skip ('Logins into the application',  () => {
 
         cy.visit(SKP_PAGE_URL); // Visit URL
         

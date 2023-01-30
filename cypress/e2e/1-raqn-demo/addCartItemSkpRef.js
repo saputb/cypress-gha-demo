@@ -6,7 +6,7 @@ const PASSWORD = 'Test123!!!'
 
 describe('Open Login page and close cookies', () => {
 
-    it.skip ('Logins into the application',  () => {
+    it ('Logins into the application',  () => {
 
         cy.visit(SKP_PAGE_URL); // Visit URL
         
@@ -14,6 +14,8 @@ describe('Open Login page and close cookies', () => {
 
         cy.url()
         .should('contain', '/bienvenue/login.html'); // Assert for correct URL link
+
+        cy.wait(5000);
 
         cy.get('#gigya-textbox-78686915856172460', { timeout: 10_000 }) // Type Email on textbox
         .type(EMAIL); 
@@ -24,7 +26,7 @@ describe('Open Login page and close cookies', () => {
         cy.get('#gigya-login-form > :nth-child(6) > .gigya-composite-control-submit > .gigya-input-submit')
         .click(); // Click on login submit button
 
-        cy.wait(14000)
+        cy.wait(20000);
 
         cy.xpath('.//h1[normalize-space()="ASK EDUCATION"]')
         .should('be.visible');
@@ -83,7 +85,8 @@ describe('Open Login page and close cookies', () => {
         cy.get('.login__circle > span')
         .invoke('show'); // Show hidden element with invoke
     
-        cy.contains('SE DÉCONNECTER').click({force:true});     //click hidden element
+        cy.contains('SE DÉCONNECTER')
+        .click({force:true});     //click hidden element
   
         cy.wait(10000)
 

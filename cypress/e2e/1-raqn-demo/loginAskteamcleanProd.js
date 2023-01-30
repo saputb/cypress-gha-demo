@@ -5,7 +5,6 @@ const EMAIL = 'bobby.saputra@henkel.com'
 const PASSWORD = 'HerM4W4n22.'
 
 describe('Open Login page and close cookies', () => {
-    // beforeEach(() => {
 
     it ('Login into the application',  () => {
 

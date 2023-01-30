@@ -4,6 +4,7 @@
   "main": "cypress.config.js",
   "scripts": {
     "cy:report": "cypress run"
+
   },
   "author": "Bobby",
   "license": "ISC",

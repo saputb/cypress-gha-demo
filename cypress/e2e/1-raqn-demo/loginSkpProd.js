@@ -24,7 +24,7 @@ describe('E2E Login test SKP', () => {
     cy.get('#gigya-login-form > :nth-child(6) > .gigya-composite-control-submit > .gigya-input-submit')
     .click(); // Click on login submit button
      
-    cy.wait (20000);
+    cy.wait (15000);
  
     cy.get('.login__circle')
     .invoke('show'); // Show hidden element with invoke

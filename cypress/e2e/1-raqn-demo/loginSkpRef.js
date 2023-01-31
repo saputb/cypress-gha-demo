@@ -24,7 +24,7 @@ describe('E2E Login test SKP', () => {
     cy.get('#gigya-login-form > :nth-child(6) > .gigya-composite-control-submit > .gigya-input-submit')
     .click(); // Click on login submit button
      
-    cy.wait (12000);
+    cy.wait (15000);
  
     cy.xpath('.//div[@id="title-6fb8d38fde"]'); // Verify ASK education text
 
